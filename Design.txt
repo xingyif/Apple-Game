@@ -1,0 +1,29 @@
+Design
+
+class Apple:
+ 
+This class contains the x and y positions of an apple, and the type of the apple(i.e: red, red-small).
+This class have all methods that are related to apple.
+appleImage() draws the apple images, moveDown() produces a new apple that fallen down by a fixed amount, onTheGround() determines whether an apple is on the ground, fall() produces a new apple on the next tick, caughtApple(Apple a, Basket b) takes it an apple and a basket and determine whether the given apple has fallen into the given basket, if the position of the given apple is within the range of the left side and the right side of the basket, then it is considered as a caught apple.
+
+
+interface ILoApple:
+
+In this interface there are three methods distributed in the MtLoApple class and ConsLoApple class. randomLoApple() produces a list of random apples, caughtApple(Basket b) takes in a basket and determine whether an apple has fallen into the given basket, loAppleImage() draws a image of the list of apples.
+
+class MtLoApple:
+
+This class represent a empty list of apple. In this class, randomLoApple() produces an empty list. caughtApple(Basket b) returns false because there is no apple falls into the basket. loAppleImage() draws an insignificant white circle to represent the image of empty list of apple.
+
+class ConsLoApple:
+
+This class represents a non empty list of apple. The first of the list is an apple, and the rest is an ILoApple. randomLoApple() produces a list of random  falling apples. caughtApple(Basket b) takes in a basket and determine whether any of the apple in the list has fallen into the given basket, if any apple in the list falls into the basket, the return true. loAppleImage() draws a image of the list of apples.
+
+class Basket:
+
+This class contains the x and y position of a basket, and the width and the height of the basket. There are two methods in this class, moveOnKey(String ke) and basketImage(). moveOnKey(String ke) takes a key event and produces a new basket that moves according to the key pressed. basketImage() produces the image of the basket.
+
+class AppleGame:
+
+This class represents the Apple Orchard Game. This class contains the number of apples caught so far, and an apple, and a basket. Apple Tree Image is draw in this class. onTick() produces a new AppleGame object with the apple fallen down. makeImage() produces the image of the world(contains apples, basket, tree, and number of apple caught, which is draw by appleCaughtDisplay()). The method lastImage() produces the image when the user win the game. worldEnds()  produce a new instance of the class WorldEnd. onKeyEvent(String ke) allows the user to move the basket, but this produces a apple game instead of a new basket.
+
